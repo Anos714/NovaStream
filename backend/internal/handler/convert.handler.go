@@ -13,7 +13,6 @@ var supportedFormats = map[string]bool{
 	"png":  true,
 	"webp": true,
 	"avif": true,
-	"svg":  true,
 }
 
 func ConvertImage(c fiber.Ctx)error{
