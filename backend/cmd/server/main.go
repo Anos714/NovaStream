@@ -3,6 +3,8 @@ package main
 import (
 	"log"
 	"nova-stream/internal/config"
+	"nova-stream/internal/middleware"
+	"nova-stream/internal/routes"
 
 	"github.com/gofiber/fiber/v3"
 	"github.com/joho/godotenv"
@@ -17,7 +19,9 @@ func main(){
 
 	cfg:=config.Load()
 
-	app:=fiber.New()
+	app:=fiber.New(fiber.Config{
+		ErrorHandler: middleware.ErrorHandler,
+	})
 
 	// ping route (for api testing)
 	app.Get("/ping",func(c fiber.Ctx)error{
@@ -26,6 +30,9 @@ func main(){
 			"message":"pong",
 		})
 	})
+
+	routes.Setup(app)
+
 
 	port:=":"+cfg.PORT
 	log.Fatal(app.Listen(port))
