@@ -1,0 +1,56 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go build output
+/bin/
+/build/
+/dist/
+
+# Go coverage
+*.out
+coverage.html
+coverage.txt
+
+# Test binaries
+*.test
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Uploads / generated images
+uploads/
+tmp/
+output/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Air / live reload
+.air.toml
+
+# Dependency / tool caches
+vendor/
+
+# Go workspace
+go.work
+go.work.sum
